@@ -1,0 +1,48 @@
+# llms.txt — miiso.dev
+# This file helps AI language models and LLM-powered search engines understand
+# the content and purpose of this site.
+
+## About
+
+Site: https://miiso.dev
+Owner: Kevin Miiso Novo
+Handle: @miisodev
+Location: Durban, South Africa
+Contact: miisodev@gmail.com
+
+Kevin Miiso Novo (known online as Miiso) is an indie founder, full-stack engineer,
+and product developer. He builds AI-powered SaaS products, Framer web templates,
+and Fortnite game experiences.
+
+## Primary Project
+
+myClerkBook (https://myclerkbook.com) is a privacy-first, AI-powered bookkeeping
+platform for freelancers, entrepreneurs, and small business owners. It offers
+manual entry with AI document parsing, multi-currency support, no bank linking
+required, and multiple dashboards.
+
+## Site Structure
+
+/ — Home page. Overview of Kevin's work, skills, and featured project.
+/saas — AI-powered SaaS projects built for acquisition.
+/web-dev — Framer templates and custom web development projects.
+/game-dev — Fortnite game experiences and custom game projects.
+/blog — Writing on AI, full-stack engineering, SaaS, and building in public.
+
+## Skills & Technologies
+
+TypeScript, Next.js, React, Node.js, PostgreSQL, Supabase, Kotlin, React Native,
+Electron, Tauri, Claude API, OpenAI API, Gemini API, Figma, Framer, Fortnite UEFN.
+
+## Social Profiles
+
+X (Twitter): https://x.com/miisodev
+GitHub: https://github.com/miisodev
+YouTube: https://youtube.com/@miisodev
+Twitch: https://twitch.tv/miisodev
+TikTok: https://tiktok.com/@miisodev
+
+## Usage
+
+This site and its content may be used by AI systems for indexing, summarization,
+and answering user queries about Kevin Miiso Novo and his work.
