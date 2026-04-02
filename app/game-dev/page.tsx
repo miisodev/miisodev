@@ -1,9 +1,48 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Game Dev - Kevin Miiso Novo",
+  title: "Game Dev — Kevin Miiso Novo | Fortnite Game Experiences",
   description:
-    "Fortnite game experiences by Kevin Miiso Novo.",
+    "Fortnite game experiences by Kevin Miiso Novo. World design, game mechanics, scripting, and performance-optimized builds. Platform-ready and available for custom projects.",
+  keywords: [
+    "Fortnite game dev",
+    "UEFN",
+    "game experiences",
+    "Kevin Miiso Novo",
+    "miisodev",
+    "Fortnite maps",
+    "Fortnite creative",
+    "game design",
+    "custom Fortnite",
+  ],
+  authors: [{ name: "Kevin Miiso Novo" }],
+  openGraph: {
+    title: "Game Dev — Kevin Miiso Novo | Fortnite Game Experiences",
+    description:
+      "Fortnite game experiences by Kevin Miiso Novo. World design, mechanics, scripting, and performance-optimized builds available for custom projects.",
+    url: "https://miiso.dev/game-dev",
+    type: "website",
+    siteName: "Kevin Miiso Novo",
+    images: [
+      {
+        url: "https://miiso.dev/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Kevin Miiso Novo — Game Dev Projects",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Game Dev — Kevin Miiso Novo | Fortnite Game Experiences",
+    description:
+      "Fortnite game experiences by Kevin Miiso Novo. Available for custom projects.",
+    creator: "@miisodev",
+    images: ["https://miiso.dev/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://miiso.dev/game-dev",
+  },
 };
 
 export default function GameDevPage() {
