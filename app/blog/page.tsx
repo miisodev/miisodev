@@ -25,6 +25,17 @@ export const metadata = {
     url: "https://miiso.dev/blog",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog — Kevin Miiso Novo",
+    description:
+      "Writing on AI, full-stack engineering, and building products as a solo founder.",
+    creator: "@miisodev",
+    images: ["https://miiso.dev/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://miiso.dev/blog",
+  },
 };
 
 export default async function BlogPage() {
