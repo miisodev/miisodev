@@ -6,23 +6,11 @@ I like learning, innovating and exploration. I build AI-powered products, create
 
 ---
 
-## What I'm Building
+## Building
 
 | Project | Description | Status |
 |---|---|---|
-| [myClerkBook](https://myclerkbook.com) | Privacy-first AI financial management. Multi-currency, offline-first, cross-platform. | 🟢 Active |
-
----
-
-## What I Do
-
-**SaaS** — Building and selling standalone AI-powered software products. Clean architecture, maintainable codebases, and scalable infrastructure built to grow.
-
-**Game Dev** — Creating game experiences in Fortnite. From concept to published map.
-
-**Web Dev** — Designing and building Framer templates. From concept to polished site.
-
----
+| [myClerkBook](https://myclerkbook.com) | Smart BOOK-KEEPING for modern professionals | 🟢 Active |
 
 
 [![Website](https://img.shields.io/badge/miiso.dev-6B8F71?style=flat-square&logo=safari&logoColor=white)](https://miiso.dev)
@@ -30,4 +18,4 @@ I like learning, innovating and exploration. I build AI-powered products, create
 [![Twitch](https://img.shields.io/badge/miisodev-9146FF?style=flat-square&logo=twitch&logoColor=white)](https://twitch.tv/miisodev)
 [![YouTube](https://img.shields.io/badge/miisodev-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://youtube.com/@miisodev)
 [![TikTok](https://img.shields.io/badge/miisodev-black?style=flat-square&logo=tiktok)](https://tiktok.com/@miisodev)
-[![Email](https://img.shields.io/badge/hello@miiso.dev-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:hello@miiso.dev)
+[![Email](https://img.shields.io/badge/miisodev@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:miisodev@gmail.com)
