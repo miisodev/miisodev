@@ -24,14 +24,43 @@ export async function generateMetadata({ params }: Props) {
   const post = await getPostBySlug(slug);
 
   if (!post) {
-    return {
-      title: "Not Found",
-    };
+    return { title: "Not Found" };
   }
 
+  const canonicalUrl = `https://miiso.dev/blog/${slug}`;
+  const ogImage = "https://miiso.dev/og-image.png";
+
   return {
-    title: `${post.title} - Miiso`,
+    title: `${post.title} — Miiso`,
     description: post.excerpt,
+    authors: [{ name: "Kevin Miiso Novo" }],
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: canonicalUrl,
+      type: "article",
+      publishedTime: new Date(post.date).toISOString(),
+      authors: ["Kevin Miiso Novo"],
+      siteName: "Kevin Miiso Novo",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      creator: "@miisodev",
+      images: [ogImage],
+    },
+    alternates: {
+      canonical: canonicalUrl,
+    },
   };
 }
 
