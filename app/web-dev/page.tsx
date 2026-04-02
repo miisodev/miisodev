@@ -1,9 +1,48 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Web Dev - Kevin Miiso Novo",
+  title: "Web Dev — Kevin Miiso Novo | Framer Templates & Custom Sites",
   description:
-    "Framer projects by Kevin Miiso Novo.",
+    "Framer templates and custom web projects by Kevin Miiso Novo. UI/UX design, graphic design, motion, and performance-optimized builds. SEO-ready and available for custom work.",
+  keywords: [
+    "Framer templates",
+    "web development",
+    "Kevin Miiso Novo",
+    "miisodev",
+    "UI/UX design",
+    "web design",
+    "Framer sites",
+    "custom websites",
+    "SEO-ready templates",
+  ],
+  authors: [{ name: "Kevin Miiso Novo" }],
+  openGraph: {
+    title: "Web Dev — Kevin Miiso Novo | Framer Templates & Custom Sites",
+    description:
+      "Framer templates and custom web projects by Kevin Miiso Novo. UI/UX, motion, and performance-optimized builds available for custom work.",
+    url: "https://miiso.dev/web-dev",
+    type: "website",
+    siteName: "Kevin Miiso Novo",
+    images: [
+      {
+        url: "https://miiso.dev/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Kevin Miiso Novo — Web Dev Projects",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Dev — Kevin Miiso Novo | Framer Templates & Custom Sites",
+    description:
+      "Framer templates and custom web projects by Kevin Miiso Novo. Available for custom work.",
+    creator: "@miisodev",
+    images: ["https://miiso.dev/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://miiso.dev/web-dev",
+  },
 };
 
 export default function WebDevPage() {
