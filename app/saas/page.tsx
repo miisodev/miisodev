@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/SchemaScripts";
 
 export const metadata: Metadata = {
   title: "SaaS — Kevin Miiso Novo | AI-Powered Software Products",
@@ -47,7 +48,14 @@ export const metadata: Metadata = {
 
 export default async function SaaSPage() {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-16 space-y-12">
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://miiso.dev" },
+          { name: "SaaS", url: "https://miiso.dev/saas" },
+        ]}
+      />
+      <div className="mx-auto max-w-4xl px-4 py-16 space-y-12">
       {/* Hero Section */}
       <section className="space-y-6 fade-in stagger-item-1">
         <h1 className="text-4xl md:text-5xl font-display font-normal">
@@ -135,6 +143,7 @@ export default async function SaaSPage() {
       </section>
 
 
-    </div>
+      </div>
+    </>
   );
 }

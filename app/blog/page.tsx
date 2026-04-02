@@ -1,5 +1,6 @@
 import PostList from "@/components/PostList";
 import { getAllPosts } from "@/lib/posts";
+import { BreadcrumbSchema } from "@/components/SchemaScripts";
 
 export const metadata = {
   title: "Blog - Kevin Miiso Novo",
@@ -42,7 +43,14 @@ export default async function BlogPage() {
   const posts = await getAllPosts();
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-16 space-y-12">
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://miiso.dev" },
+          { name: "Blog", url: "https://miiso.dev/blog" },
+        ]}
+      />
+      <div className="mx-auto max-w-4xl px-4 py-16 space-y-12">
       {/* Hero Section */}
       <section className="space-y-4 fade-in stagger-item-1">
         <h1 className="text-4xl md:text-5xl font-display font-normal">
@@ -67,6 +75,7 @@ export default async function BlogPage() {
       <section className="fade-in stagger-item-2">
         <PostList posts={posts} showLink={false} />
       </section>
-    </div>
+      </div>
+    </>
   );
 }

@@ -6,7 +6,7 @@ import {
   formatDate,
   calculateReadTime,
 } from "@/lib/posts";
-import { ArticleSchema } from "@/components/SchemaScripts";
+import { ArticleSchema, BreadcrumbSchema } from "@/components/SchemaScripts";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -94,6 +94,13 @@ export default async function BlogPost({ params }: Props) {
         description={post.excerpt}
         publishedDate={new Date(post.date).toISOString()}
         slug={slug}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://miiso.dev" },
+          { name: "Blog", url: "https://miiso.dev/blog" },
+          { name: post.title, url: `https://miiso.dev/blog/${slug}` },
+        ]}
       />
       <article className="mx-auto max-w-2xl px-4 py-16">
       {/* Back link */}

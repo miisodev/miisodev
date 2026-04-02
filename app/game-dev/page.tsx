@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/SchemaScripts";
 
 export const metadata: Metadata = {
   title: "Game Dev — Kevin Miiso Novo | Fortnite Game Experiences",
@@ -47,7 +48,14 @@ export const metadata: Metadata = {
 
 export default function GameDevPage() {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-16 space-y-12">
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://miiso.dev" },
+          { name: "Game Dev", url: "https://miiso.dev/game-dev" },
+        ]}
+      />
+      <div className="mx-auto max-w-4xl px-4 py-16 space-y-12">
       {/* Hero Section */}
       <section className="space-y-6 fade-in stagger-item-1">
         <h1 className="text-4xl md:text-5xl font-display font-normal">
@@ -106,6 +114,7 @@ export default function GameDevPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
