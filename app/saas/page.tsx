@@ -1,9 +1,48 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SaaS - Kevin Miiso Novo",
+  title: "SaaS — Kevin Miiso Novo | AI-Powered Software Products",
   description:
-    "Standalone AI-powered SaaS projects built and sold by Kevin Miiso Novo.",
+    "AI-powered SaaS products built and designed for acquisition by Kevin Miiso Novo. Modern full-stack engineering with clean architecture and scalable infrastructure.",
+  keywords: [
+    "SaaS",
+    "AI SaaS",
+    "software products",
+    "Kevin Miiso Novo",
+    "miisodev",
+    "indie SaaS",
+    "software acquisition",
+    "full-stack engineering",
+    "Next.js SaaS",
+  ],
+  authors: [{ name: "Kevin Miiso Novo" }],
+  openGraph: {
+    title: "SaaS — Kevin Miiso Novo | AI-Powered Software Products",
+    description:
+      "AI-powered SaaS products built and designed for acquisition by Kevin Miiso Novo. Modern full-stack engineering with clean architecture and scalable infrastructure.",
+    url: "https://miiso.dev/saas",
+    type: "website",
+    siteName: "Kevin Miiso Novo",
+    images: [
+      {
+        url: "https://miiso.dev/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Kevin Miiso Novo — SaaS Projects",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SaaS — Kevin Miiso Novo | AI-Powered Software Products",
+    description:
+      "AI-powered SaaS products built and designed for acquisition by Kevin Miiso Novo.",
+    creator: "@miisodev",
+    images: ["https://miiso.dev/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://miiso.dev/saas",
+  },
 };
 
 export default async function SaaSPage() {
