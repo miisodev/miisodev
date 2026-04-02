@@ -92,7 +92,7 @@ export function ProjectSchema() {
       name: "Kevin Miiso Novo",
       alternateName: "Miiso",
       url: "https://miiso.dev",
-      email: "hello@miiso.dev",
+      email: "miisodev@gmail.com",
       sameAs: [
         "https://github.com/miisodev",
         "https://x.com/miisodev",

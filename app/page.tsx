@@ -82,11 +82,11 @@ export default async function Home() {
             </a>
             <span style={{ color: "rgba(107, 143, 113, 0.4)" }}>•</span>
             <a
-              href="mailto:hello@miiso.dev"
+              href="mailto:miisodev@gmail.com"
               className="hover:transition-colors"
               style={{ color: "#6B8F71" }}
             >
-              hello@miiso.dev
+              miisodev@gmail.com
             </a>
           </div>
         </section>

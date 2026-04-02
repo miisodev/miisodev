@@ -94,7 +94,7 @@ export default function RootLayout({
     name: "Kevin Miiso Novo",
     alternateName: "Miiso",
     url: "https://miiso.dev",
-    email: "hello@miiso.dev",
+    email: "miisodev@gmail.com",
     jobTitle: "Founder & Full-Stack Engineer",
     description:
       "Indie founder and full-stack engineer building privacy-first SaaS products, Fortnite/Roblox game experiences, and Framer web templates. Based in Durban, South Africa.",
