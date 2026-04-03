@@ -7,65 +7,97 @@ import ThemeToggle from "./ThemeToggle";
 export default function Header() {
   const pathname = usePathname();
 
-  const isActive = (href: string) => {
-    if (href === "/") return pathname === "/";
-    return pathname.startsWith(href);
-  };
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+  const navLinks = [
+    { href: "/saas", label: "SaaS" },
+    { href: "/web-dev", label: "Web Dev" },
+    { href: "/game-dev", label: "Game Dev" },
+    { href: "/blog", label: "Blog" },
+  ];
 
   return (
     <header
-      className="sticky top-0 z-50 backdrop-blur-sm fade-in"
       style={{
-        backgroundColor: `rgba(var(--background), 0.95)`,
+        position: "sticky",
+        top: 0,
+        zIndex: 50,
+        height: 56,
+        backgroundColor: "color-mix(in srgb, var(--bg) 85%, transparent)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
       }}
     >
-      <nav className="mx-auto max-w-4xl px-4 py-4 flex justify-between items-center">
-        {/* Logo/Home */}
-        <Link href="/" className="font-mono text-sm font-medium tracking-tight">
+      <nav
+        style={{
+          maxWidth: 896,
+          margin: "0 auto",
+          padding: "0 24px",
+          height: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <Link
+          href="/"
+          style={{
+            fontFamily: "var(--font-outfit)",
+            fontWeight: 600,
+            fontSize: 15,
+            color: "var(--text)",
+            letterSpacing: "-0.01em",
+            transition: "color 150ms ease",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text)")}
+        >
           miiso.dev
         </Link>
 
-        {/* Nav links */}
-        <div className="flex gap-6 items-center font-mono text-sm flex-wrap">
-          <Link
-            href="/saas"
-            className={isActive("/saas") ? "font-medium" : ""}
-            style={{
-              color: isActive("/saas") ? "#6B8F71" : "inherit",
-            }}
-          >
-            SaaS
-          </Link>
-          <Link
-            href="/web-dev"
-            className={isActive("/web-dev") ? "font-medium" : ""}
-            style={{
-              color: isActive("/web-dev") ? "#6B8F71" : "inherit",
-            }}
-          >
-            Web Dev
-          </Link>
-          <Link
-            href="/game-dev"
-            className={isActive("/game-dev") ? "font-medium" : ""}
-            style={{
-              color: isActive("/game-dev") ? "#6B8F71" : "inherit",
-            }}
-          >
-            Game Dev
-          </Link>
-          <Link
-            href="/blog"
-            className={isActive("/blog") ? "font-medium" : ""}
-            style={{
-              color: isActive("/blog") ? "#6B8F71" : "inherit",
-            }}
-          >
-            Blog
-          </Link>
+        <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
+          {navLinks.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              style={{
+                fontFamily: "var(--font-outfit)",
+                fontWeight: 500,
+                fontSize: 14,
+                color: isActive(href) ? "var(--accent)" : "var(--muted)",
+                position: "relative",
+                paddingBottom: 2,
+                transition: "color 150ms ease",
+              }}
+            >
+              {label}
+              {isActive(href) && (
+                <span
+                  style={{
+                    position: "absolute",
+                    bottom: -2,
+                    left: 0,
+                    width: "100%",
+                    height: 2,
+                    background: "var(--accent)",
+                    borderRadius: 1,
+                    animation: "underlineIn 200ms ease-out both",
+                  }}
+                />
+              )}
+            </Link>
+          ))}
           <ThemeToggle />
         </div>
       </nav>
+
+      <style>{`
+        @keyframes underlineIn {
+          from { transform: scaleX(0); transform-origin: left; }
+          to   { transform: scaleX(1); transform-origin: left; }
+        }
+      `}</style>
     </header>
   );
 }
