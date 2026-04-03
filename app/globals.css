@@ -18,7 +18,7 @@ html[data-theme="dark"] {
   --bg:       #0C0C0F;
   --surface:  #161618;
   --text:     #F0EDE8;
-  --muted:    #555558;
+  --muted:    #888890;
   --accent:   #F95C4B;
   --brand:    #0067FF;
   --border:   #222226;
@@ -31,7 +31,7 @@ html[data-theme="dark"] {
     --bg:       #0C0C0F;
     --surface:  #161618;
     --text:     #F0EDE8;
-    --muted:    #555558;
+    --muted:    #888890;
     --accent:   #F95C4B;
     --brand:    #0067FF;
     --border:   #222226;
@@ -99,6 +99,10 @@ a {
 .hero-socials { animation: fadeUp 400ms ease-out 320ms both; }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   *,
   *::before,
   *::after {
