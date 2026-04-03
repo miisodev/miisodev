@@ -30,6 +30,7 @@ export default function Header() {
       }}
     >
       <nav
+        aria-label="Main"
         style={{
           maxWidth: 896,
           margin: "0 auto",
@@ -51,7 +52,7 @@ export default function Header() {
             transition: "color 150ms ease",
           }}
           onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text)")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "")}
         >
           miiso.dev
         </Link>
@@ -82,6 +83,7 @@ export default function Header() {
                     height: 2,
                     background: "var(--accent)",
                     borderRadius: 1,
+                    transformOrigin: "left",
                     animation: "underlineIn 200ms ease-out both",
                   }}
                 />
@@ -94,8 +96,8 @@ export default function Header() {
 
       <style>{`
         @keyframes underlineIn {
-          from { transform: scaleX(0); transform-origin: left; }
-          to   { transform: scaleX(1); transform-origin: left; }
+          from { transform: scaleX(0); }
+          to   { transform: scaleX(1); }
         }
       `}</style>
     </header>
