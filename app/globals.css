@@ -1,128 +1,203 @@
 @import "tailwindcss";
 
-@theme {
-  --color-sage: #6B8F71;
-  
-  --color-dark-bg: #0a0a0a;
-  --color-dark-text: #e8e8e8;
-  --color-dark-muted: #666;
-  
-  --color-light-bg: #f9f7f4;
-  --color-light-text: #1a1a1a;
-  --color-light-muted: #6b6b6b;
-}
+/* --- Design Tokens -------------------------------------------------------- */
 
 :root {
-  --background: theme(--color-light-bg);
-  --foreground: theme(--color-light-text);
-  --muted: theme(--color-light-muted);
+  --bg:       #F6F4F1;
+  --surface:  #E4DED2;
+  --text:     #000000;
+  --muted:    #6B6B6B;
+  --accent:   #F95C4B;
+  --brand:    #0067FF;
+  --border:   #D8D2C8;
+
   color-scheme: light;
 }
 
+html[data-theme="dark"] {
+  --bg:       #0C0C0F;
+  --surface:  #161618;
+  --text:     #F0EDE8;
+  --muted:    #555558;
+  --accent:   #F95C4B;
+  --brand:    #0067FF;
+  --border:   #222226;
+
+  color-scheme: dark;
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: theme(--color-dark-bg);
-    --foreground: theme(--color-dark-text);
-    --muted: theme(--color-dark-muted);
+  :root:not([data-theme="light"]) {
+    --bg:       #0C0C0F;
+    --surface:  #161618;
+    --text:     #F0EDE8;
+    --muted:    #555558;
+    --accent:   #F95C4B;
+    --brand:    #0067FF;
+    --border:   #222226;
+
     color-scheme: dark;
   }
 }
 
-/* Allow manual theme override */
-html[style*="color-scheme: dark"] {
-  --background: theme(--color-dark-bg);
-  --foreground: theme(--color-dark-text);
-  --muted: theme(--color-dark-muted);
-}
-
-html[style*="color-scheme: light"] {
-  --background: theme(--color-light-bg);
-  --foreground: theme(--color-light-text);
-  --muted: theme(--color-light-muted);
-}
-
-* {
-  @apply transition-colors duration-200;
-}
+/* --- Base ----------------------------------------------------------------- */
 
 html {
-  @apply scroll-smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: "JetBrains Mono", monospace;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-outfit), system-ui, sans-serif;
   line-height: 1.6;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", serif;
-  font-weight: 400;
-  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-  @apply relative transition-colors duration-200;
   text-decoration: none;
   color: inherit;
+  transition: color 150ms ease;
 }
 
-a:hover {
-  color: theme(--color-sage);
+/* --- Focus Rings ---------------------------------------------------------- */
+
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* --- Selection ------------------------------------------------------------ */
 
-.fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-/* Staggered animation */
-.stagger-item-1 { animation-delay: 0.1s; }
-.stagger-item-2 { animation-delay: 0.2s; }
-.stagger-item-3 { animation-delay: 0.3s; }
-.stagger-item-4 { animation-delay: 0.4s; }
-.stagger-item-5 { animation-delay: 0.5s; }
-
-/* Underline slide animation */
-@keyframes underlineSlide {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-.underline-slide {
-  position: relative;
-}
-
-.underline-slide::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: theme(--color-sage);
-  animation: underlineSlide 0.3s ease-out forwards;
-}
-
-/* Selection color */
 ::selection {
-  background: theme(--color-sage);
-  color: var(--background);
+  background: var(--accent);
+  color: #fff;
 }
 
+/* --- Animations ----------------------------------------------------------- */
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-page {
+  animation: pageEnter 400ms ease-out both;
+}
+
+.hero-label   { animation: fadeUp 400ms ease-out 0ms   both; }
+.hero-name    { animation: fadeUp 400ms ease-out 80ms  both; }
+.hero-tagline { animation: fadeUp 400ms ease-out 160ms both; }
+.hero-bio     { animation: fadeUp 400ms ease-out 240ms both; }
+.hero-socials { animation: fadeUp 400ms ease-out 320ms both; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* --- Skip Link ------------------------------------------------------------ */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 0 0 8px 8px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 9999;
+  transition: top 150ms ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* --- Prose (blog posts) --------------------------------------------------- */
+
+.prose-content {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+.prose-content h2 {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.prose-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.prose-content p {
+  margin-bottom: 1.25rem;
+}
+
+.prose-content a {
+  color: var(--accent);
+}
+
+.prose-content a:hover {
+  text-decoration: underline;
+}
+
+.prose-content pre {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 16px 20px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-family: var(--font-mono), monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  border: 1px solid var(--border);
+}
+
+.prose-content code:not(pre code) {
+  background: var(--surface);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-family: var(--font-mono), monospace;
+  font-size: 14px;
+}
+
+.prose-content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--muted);
+  margin: 1.5rem 0;
+}
+
+.prose-content ul,
+.prose-content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose-content li {
+  margin-bottom: 0.4rem;
+}
