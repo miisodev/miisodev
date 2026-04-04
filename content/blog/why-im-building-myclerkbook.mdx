@@ -32,39 +32,69 @@ Your money flows are complex:
 
 And you need to understand it all *in real time*, without waiting for a monthly reconciliation or sending spreadsheets to an accountant.
 
+The deeper problem isn't just complexity—it's that existing tools force a tradeoff: either you get useful automation and hand over your banking credentials, or you keep your privacy and live in spreadsheet hell. That's a false choice. You shouldn't have to compromise your financial data just to get a clear picture of your business.
+
+## Who I'm Building This For
+
+After talking to a lot of freelancers and founders, three distinct groups keep coming up:
+
+**Freelancers and solo founders** juggling 5–10 clients, irregular income streams, and multi-currency payments. They need financial clarity without the overhead of accounting software built for teams.
+
+**Privacy-conscious professionals** who refuse to link bank accounts to third-party apps. They want complete control over their data, transparent data handling, and the ability to delete everything on demand.
+
+**Small business owners** who need simplified profit and loss visibility, recurring expense tracking, and clean reports for tax time—without the complexity of enterprise tools.
+
+What all three have in common: they're underserved by every tool currently on the market.
+
 ## Building in Public
 
 That's why I'm building [**myClerkBook**](https://myclerkbook.com).
 
-It's not trying to be Quickbooks or YNAB. It's solving a specific problem for a specific person: the solo builder who needs to understand their finances, keep their data private, and make decisions fast.
+It's not trying to be Quickbooks or YNAB. It's solving a specific problem for specific people: solo builders who need to understand their finances, keep their data private, and make decisions fast.
 
 ### The philosophy:
 
-1. **Privacy first**: Your financial data never leaves your device unless you explicitly sync it
-2. **For indies**: Built for irregular income, multi-currency, freelance work
-3. **Offline-first**: Works without internet; syncs when you're connected
-4. **Cross-platform**: Web, mobile, desktop—your financial data follows you
-5. **AI-powered**: Smart categorization, anomaly detection, and insights
+1. **Privacy first**: No bank linking required—ever. Manual entry with AI-powered document parsing means your financial data never gets shared without your explicit consent.
+2. **For indies**: Built for irregular income, multiple projects, multi-currency, and freelance work.
+3. **AI-powered, not AI-dependent**: Upload a receipt or invoice and the AI extracts the amount, vendor, date, and category. You review, confirm, and move on.
+4. **Multiple dashboards**: Run a freelance business alongside a side project? Each gets its own dashboard with independent tracking, its own currency, and its own income/expense history.
+5. **Real-time visibility**: Cash flow alerts, spending summaries, and upcoming expense reminders—so you always know where you stand.
 
 ### The stack:
 
-- **Frontend**: Next.js (web), Expo (iOS/Android)
-- **Backend**: Supabase (PostgreSQL, real-time)
-- **AI**: Claude API for smart categorization and insights
+- **Frontend**: Next.js (web), Expo (iOS/Android coming later)
+- **Backend**: Supabase (PostgreSQL, auth, file storage)
+- **AI**: Claude API for smart categorization, document parsing, and insights
+- **Payments**: Polar for subscription management
+- **Notifications**: Resend (email), Twilio (SMS and WhatsApp for premium users)
 - **Design**: Built for speed and clarity, not flashiness
+
+## What the MVP Looks Like
+
+The core feature set I'm shipping first:
+
+- **Manual income and expense entry** with smart suggestions and auto-complete
+- **AI document parsing**: upload a receipt, invoice, or bank statement image and the key fields are extracted automatically
+- **Custom groups (categories)**: create your own, not locked into preset buckets
+- **Recurring transactions**: weekly, monthly, or yearly—so subscription costs and retainer income don't get forgotten
+- **Dashboard with widgets**: drag-and-drop customizable widgets with real-time data
+- **Multi-currency support**: 50+ currencies, set per dashboard
+- **Email notifications**: upcoming expense alerts, cash flow warnings, weekly summaries
+
+Premium features (unlocked at $10/month) add multiple dashboards, SMS and WhatsApp notifications, and advanced API connections in the widget section.
+
+There's a 7-day free trial on the premium plan—no credit card games, no bait-and-switch.
+
+## The Honest Tradeoffs
+
+Manual entry is a real commitment. The whole premise only works if you stay consistent with it. I'm not going to pretend that's zero friction—it is. But for people who've already decided they don't want to link their bank account, it's a workflow that works.
+
+AI parsing helps close that gap significantly. Snap a photo of a receipt, upload an invoice PDF, and most of the work is done. But it's still a tool that requires you to show up for your finances. For the people myClerkBook is built for, that's a feature, not a bug.
 
 ## What's Next
 
-Right now, I'm building the MVP. The core feature set:
-
-- Multi-currency income and expense tracking
-- Smart AI categorization
-- Offline sync via local-first architecture
-- Tax summary reports
-- Export to CSV/PDF for your accountant
-
 I'm shipping updates every week on [@miisodev](https://x.com/miisodev) and writing about the journey here.
 
+If you're a freelancer, solo founder, or just someone who wants financial clarity without the privacy compromise—[check out myClerkBook](https://myclerkbook.com) and tell me what you think.
 
 ---
-
