@@ -1,8 +1,8 @@
+import Link from "next/link";
 import Logs from "@/components/Logs";
 import PostList from "@/components/PostList";
 import { ProjectSchema } from "@/components/SchemaScripts";
 import { getLatestPosts } from "@/lib/posts";
-import Link from "next/link";
 
 export default async function Home() {
   const latestPosts = await getLatestPosts(3);
@@ -10,402 +10,166 @@ export default async function Home() {
   return (
     <>
       <ProjectSchema />
-      <div className="mx-auto max-w-4xl px-4 py-16 space-y-24">
-        {/* Section 1: Hero */}
-        <section className="space-y-4 fade-in stagger-item-1">
-          <h1 className="sr-only">
-            Kevin Miiso Novo - Founder & CEO | Product Developer | Full-Stack Engineer
-          </h1>
+      <div className="animate-page" style={{ maxWidth: 896, margin: "0 auto", padding: "0 24px" }}>
 
-          <div className="text-3xl md:text-4xl font-display font-normal">
+        {/* Hero */}
+        <section style={{ paddingTop: 120, paddingBottom: 96 }}>
+          <h1 className="sr-only">Kevin Miiso Novo — Founder & CEO | Product Developer | Full-Stack Engineer</h1>
+
+          <p className="hero-label" style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 12, color: "var(--accent)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>
+            Founder &amp; CEO · Durban, South Africa
+          </p>
+
+          <p className="hero-name" style={{ fontFamily: "var(--font-outfit)", fontWeight: 800, fontSize: "clamp(48px, 7vw, 72px)", letterSpacing: "-0.03em", lineHeight: 1.1, color: "var(--text)", marginBottom: 20 }}>
             Kevin Miiso Novo
-          </div>
-
-          <p className="text-sm md:text-base font-mono font-medium">
-            Wassup you can call me Miiso, I like learning, innovating and exploration
           </p>
 
-          <p className="text-sm leading-relaxed max-w-2xl font-mono">
-            I build AI-powered SaaS products, craft web templates in Framer, and create game experiences in Fortnite. Currently leading myClerkBook, a privacy-first financial management platform, while pushing what's possible with modern AI, agentic development, and cross-platform engineering. Based in Durban, South Africa. Always building, always shipping.
+          <p className="hero-tagline" style={{ fontFamily: "var(--font-outfit)", fontWeight: 300, fontSize: 20, color: "var(--muted)", marginBottom: 16 }}>
+            Building AI-powered products that ship.
           </p>
 
-          {/* Contact Strip */}
-          <div className="flex flex-wrap gap-4 items-center text-sm font-mono pt-2">
-            <a
-              href="https://x.com/miisodev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:transition-colors"
-              style={{ color: "#6B8F71" }}
-            >
-              @miisodev
-            </a>
-            <span style={{ color: "rgba(107, 143, 113, 0.4)" }}>•</span>
-            <a
-              href="https://twitch.tv/miisodev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:transition-colors"
-              style={{ color: "#6B8F71" }}
-            >
-              twitch
-            </a>
-            <span style={{ color: "rgba(107, 143, 113, 0.4)" }}>•</span>
-            <a
-              href="https://youtube.com/@miisodev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:transition-colors"
-              style={{ color: "#6B8F71" }}
-            >
-              youtube
-            </a>
-            <span style={{ color: "rgba(107, 143, 113, 0.4)" }}>•</span>
-            <a
-              href="https://tiktok.com/@miisodev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:transition-colors"
-              style={{ color: "#6B8F71" }}
-            >
-              tiktok
-            </a>
-            <span style={{ color: "rgba(107, 143, 113, 0.4)" }}>•</span>
-            <a
-              href="https://github.com/miisodev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:transition-colors"
-              style={{ color: "#6B8F71" }}
-            >
-              github
-            </a>
-            <span style={{ color: "rgba(107, 143, 113, 0.4)" }}>•</span>
-            <a
-              href="mailto:miisodev@gmail.com"
-              className="hover:transition-colors"
-              style={{ color: "#6B8F71" }}
-            >
-              miisodev@gmail.com
-            </a>
+          <p className="hero-bio" style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 15, lineHeight: 1.65, color: "var(--muted)", maxWidth: 480, marginBottom: 24 }}>
+            I build AI-powered SaaS products, craft web templates in Framer, and create game experiences in Fortnite. Currently leading myClerkBook — a privacy-first financial management platform. Based in Durban, South Africa.
+          </p>
+
+          <div className="hero-socials" style={{ display: "flex", flexWrap: "wrap", gap: 4, alignItems: "center" }}>
+            {[
+              { href: "https://x.com/miisodev", label: "x.com" },
+              { href: "https://twitch.tv/miisodev", label: "twitch" },
+              { href: "https://youtube.com/@miisodev", label: "youtube" },
+              { href: "https://tiktok.com/@miisodev", label: "tiktok" },
+              { href: "https://github.com/miisodev", label: "github" },
+              { href: "mailto:miisodev@gmail.com", label: "miisodev@gmail.com" },
+            ].map(({ href, label }, i, arr) => (
+              <span key={href} style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                <a
+                  href={href}
+                  target={href.startsWith("mailto") ? undefined : "_blank"}
+                  rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+                  style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 14, color: "var(--muted)", transition: "color 150ms ease" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "")}
+                >
+                  {label}
+                </a>
+                {i < arr.length - 1 && <span style={{ color: "var(--muted)", opacity: 0.4 }}>·</span>}
+              </span>
+            ))}
           </div>
         </section>
 
-        {/* Section 2: myClerkBook Featured Card */}
-        <section className="fade-in stagger-item-2">
-          <Link
+        {/* myClerkBook Card */}
+        <section style={{ paddingBottom: 96 }}>
+          <a
             href="https://myclerkbook.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="block rounded-xl p-4 md:p-5 transition-all duration-200 hover:shadow-lg"
             style={{
-              border: "2px solid #0067ff",
+              display: "block",
+              background: "var(--surface)",
+              border: "1px solid var(--border)",
+              borderLeftWidth: 4,
+              borderLeftColor: "var(--brand)",
+              borderRadius: 12,
+              padding: 24,
+              textDecoration: "none",
+              transition: "transform 200ms ease, box-shadow 200ms ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-1px)";
+              e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.04)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "";
+              e.currentTarget.style.boxShadow = "";
             }}
           >
-            <div className="space-y-3">
-              <h2
-                className="text-xl font-display font-normal"
-                style={{ color: "var(--foreground)" }}
-              >
-                myClerkBook
-              </h2>
-
-              <p
-                className="text-sm"
-                style={{ color: "var(--foreground)" }}
-              >
-                Smart BOOK-KEEPING for modern professionals.
-              </p>
-
-              <p
-                className="text-sm"
-                style={{ color: "var(--foreground)" }}
-              >
-                Take control of your finances without compromising your privacy.
-                myClerkBook provides AI-powered expense and income tracking that
-                works the way you do — no bank linking required.
-              </p>
-
-
-              <p
-                className="text-sm font-mono pt-2"
-                style={{ color: "#0067ff" }}
-              >
-                myclerkbook.com →
-              </p>
-            </div>
-          </Link>
+            <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 11, color: "var(--brand)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10 }}>SaaS Product</p>
+            <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 700, fontSize: 22, color: "var(--text)", marginBottom: 6 }}>myClerkBook</p>
+            <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 15, color: "var(--muted)", marginBottom: 8 }}>Smart bookkeeping for modern professionals.</p>
+            <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 14, lineHeight: 1.6, color: "var(--muted)", marginBottom: 16, maxWidth: 480 }}>
+              Take control of your finances without compromising your privacy. AI-powered expense and income tracking — no bank linking required.
+            </p>
+            <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 14, color: "var(--brand)" }}>myclerkbook.com →</p>
+          </a>
         </section>
 
-        {/* Section 3: what I can do */}
-        <section className="fade-in stagger-item-3">
-          <div className="space-y-4">
-            <h2 className="text-3xl font-display mb-6">&lt;/&gt; what I can do</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* 1. Product & Strategy */}
+        {/* What I Can Do */}
+        <section style={{ paddingBottom: 96 }}>
+          <h2 style={{ fontFamily: "var(--font-outfit)", fontWeight: 700, fontSize: 32, letterSpacing: "-0.02em", color: "var(--text)", marginBottom: 32 }}>What I can do</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
+            {[
+              { label: "Product & Strategy", desc: "Full product lifecycle from ideation to launch and marketing. Research, brand establishment, feature prioritization, roadmap planning, go-to-market execution, business and revenue modeling." },
+              { label: "Design & Branding", desc: "UI/UX in Figma, design systems, responsive and accessible interfaces. Graphic design, motion, and brand identity from concept to execution." },
+              { label: "Development & Engineering", desc: "TypeScript, Next.js, React, Node.js, PostgreSQL, Supabase. REST APIs, authentication, real-time sync, and performance-optimized architecture." },
+              { label: "DevOps & Infrastructure", desc: "CI/CD pipelines, deployment and preview environments. Error tracking, uptime monitoring, and performance optimization. Core Web Vitals tuned to production standards." },
+              { label: "AI/ML & Automation", desc: "LLM APIs across Claude, OpenAI, and Gemini. Prompt engineering, RAG, NLP, OCR, and intelligent automation in production products." },
+              { label: "Mobile & Desktop", desc: "Native Android with Kotlin and Jetpack Compose. Mobile with React Native and Expo. Desktop with Electron and Tauri. Offline-first design across platforms." },
+            ].map(({ label, desc }) => (
               <div
-                className="rounded-lg p-5 space-y-2 transition-all duration-200"
-                style={{
-                  border: "1px solid #6B8F71",
-                  backgroundColor: "rgba(107, 143, 113, 0.02)",
+                key={label}
+                style={{ background: "var(--bg)", border: "1px solid var(--border)", borderRadius: 12, padding: 24, transition: "border-color 150ms ease, background 150ms ease" }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.borderColor = "var(--accent)";
+                  (e.currentTarget as HTMLDivElement).style.background = "rgba(249,92,75,0.02)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.borderColor = "";
+                  (e.currentTarget as HTMLDivElement).style.background = "";
                 }}
               >
-                <h3
-                  className="text-sm font-mono font-medium uppercase tracking-widest"
-                  style={{ color: "#6B8F71" }}
-                >
-                  Product &amp; Strategy
-                </h3>
-                <p className="text-sm leading-relaxed">
-                  Full product lifecycle from ideation to launch and marketing.
-                  Research, brand establishment, feature prioritization, roadmap
-                  planning, go-to-market execution, business and revenue
-                  modeling.
-                </p>
+                <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 11, color: "var(--accent)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10 }}>{label}</p>
+                <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 14, lineHeight: 1.6, color: "var(--text)", opacity: 0.8 }}>{desc}</p>
               </div>
-
-              {/* 2. Design & Branding */}
-              <div
-                className="rounded-lg p-6 space-y-3 transition-all duration-200"
-                style={{
-                  border: "1px solid #6B8F71",
-                  backgroundColor: "rgba(107, 143, 113, 0.02)",
-                }}
-              >
-                <h3
-                  className="text-sm font-mono font-medium uppercase tracking-widest"
-                  style={{ color: "#6B8F71" }}
-                >
-                  Design &amp; Branding
-                </h3>
-                <p className="text-sm leading-relaxed">
-                  UI/UX in Figma, design systems, responsive and accessible
-                  interfaces. Graphic design, motion, and brand identity from
-                  concept to execution.
-                </p>
-              </div>
-
-              {/* 3. Development & Engineering */}
-              <div
-                className="rounded-lg p-6 space-y-3 transition-all duration-200"
-                style={{
-                  border: "1px solid #6B8F71",
-                  backgroundColor: "rgba(107, 143, 113, 0.02)",
-                }}
-              >
-                <h3
-                  className="text-sm font-mono font-medium uppercase tracking-widest"
-                  style={{ color: "#6B8F71" }}
-                >
-                  Development & Engineering
-                </h3>
-                <p className="text-sm leading-relaxed">
-                  TypeScript, Next.js, React, Node.js, PostgreSQL, Supabase. REST
-                  APIs, authentication, real-time sync, and performance-optimized
-                  architecture.
-                </p>
-              </div>
-
-              {/* 4. DevOps & Infrastructure */}
-              <div
-                className="rounded-lg p-6 space-y-3 transition-all duration-200"
-                style={{
-                  border: "1px solid #6B8F71",
-                  backgroundColor: "rgba(107, 143, 113, 0.02)",
-                }}
-              >
-                <h3
-                  className="text-sm font-mono font-medium uppercase tracking-widest"
-                  style={{ color: "#6B8F71" }}
-                >
-                  DevOps &amp; Infrastructure
-                </h3>
-                <p className="text-sm leading-relaxed">
-                  CI/CD pipelines, deployment and preview environments. Error
-                  tracking, uptime monitoring, and performance optimization. Code
-                  splitting, caching strategies, and Core Web Vitals tuned to
-                  production standards.
-                </p>
-              </div>
-
-              {/* 5. AI/ML & Automation */}
-              <div
-                className="rounded-lg p-6 space-y-3 transition-all duration-200"
-                style={{
-                  border: "1px solid #6B8F71",
-                  backgroundColor: "rgba(107, 143, 113, 0.02)",
-                }}
-              >
-                <h3
-                  className="text-sm font-mono font-medium uppercase tracking-widest"
-                  style={{ color: "#6B8F71" }}
-                >
-                  AI/ML &amp; Automation
-                </h3>
-                <p className="text-sm leading-relaxed">
-                  LLM APIs across Claude, OpenAI, and Gemini. Prompt
-                  engineering, RAG, NLP, OCR, and intelligent automation in
-                  production products.
-                </p>
-              </div>
-
-              {/* 6. Mobile & Desktop */}
-              <div
-                className="rounded-lg p-6 space-y-3 transition-all duration-200"
-                style={{
-                  border: "1px solid #6B8F71",
-                  backgroundColor: "rgba(107, 143, 113, 0.02)",
-                }}
-              >
-                <h3
-                  className="text-sm font-mono font-medium uppercase tracking-widest"
-                  style={{ color: "#6B8F71" }}
-                >
-                  Mobile & Desktop
-                </h3>
-                <p className="text-sm leading-relaxed">
-                  Native Android with Kotlin and Jetpack Compose. Mobile with
-                  React Native and Expo. Desktop with Electron and Tauri. MVVM
-                  architecture, offline-first design, and Material Design across
-                  platforms.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </section>
 
-        {/* Section 4: What I Do */}
-        <section className="fade-in stagger-item-4">
-          <div className="space-y-6">
-            <h2 className="text-3xl font-display">&lt;/&gt; what I do</h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Card 1: SaaS */}
-              <div
-                className="flex flex-col h-full rounded-lg p-6 transition-all duration-200 hover:shadow-md"
-                style={{
-                  border: "1px solid #6B8F71",
-                }}
+        {/* What I Do */}
+        <section style={{ paddingBottom: 96 }}>
+          <h2 style={{ fontFamily: "var(--font-outfit)", fontWeight: 700, fontSize: 32, letterSpacing: "-0.02em", color: "var(--text)", marginBottom: 32 }}>What I do</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16 }}>
+            {[
+              {
+                href: "/saas", label: "SaaS",
+                desc: "Building AI-powered software products designed to be acquired. Modern full-stack engineering with clean architecture and scalable infrastructure.",
+                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" /></svg>,
+              },
+              {
+                href: "/web-dev", label: "Web Dev",
+                desc: "Creating Framer templates from concept to polished site. UI/UX, motion, and performance-optimized builds. SEO-ready and built to convert.",
+                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>,
+              },
+              {
+                href: "/game-dev", label: "Game Dev",
+                desc: "Creating game experiences in Fortnite from concept to published map. World design, mechanics, scripting, and performance-optimized builds.",
+                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>,
+              },
+            ].map(({ href, label, desc, icon }) => (
+              <Link
+                key={href}
+                href={href}
+                style={{ display: "flex", flexDirection: "column", background: "var(--bg)", border: "1px solid var(--border)", borderRadius: 12, padding: 24, textDecoration: "none", transition: "border-color 150ms ease, transform 200ms ease" }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--accent)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; e.currentTarget.style.transform = ""; }}
               >
-                <div className="mb-4">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    style={{ color: "#6B8F71" }}
-                  >
-                    <path d="M12 2L2 7L2 17L12 22L22 17L22 7L12 2Z" />
-                    <path d="M12 12L2 7L12 2L22 7L12 12Z" />
-                    <path d="M12 12L12 22" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-display font-medium mb-3">SaaS</h3>
-                <p className="text-sm leading-relaxed mb-4">
-                  Building AI-powered software products designed to be acquired.
-                  Modern full-stack engineering with clean architecture,
-                  maintainable codebases, and scalable infrastructure built to
-                  grow.
-                </p>
-                <Link
-                  href="/saas"
-                  className="text-sm font-mono transition-colors mt-auto self-end"
-                  style={{ color: "#6B8F71" }}
-                >
-                  Explore →
-                </Link>
-              </div>
-
-              {/* Card 2: Web Dev */}
-              <div
-                className="flex flex-col h-full rounded-lg p-6 transition-all duration-200 hover:shadow-md"
-                style={{
-                  border: "1px solid #6B8F71",
-                }}
-              >
-                <div className="mb-4">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    style={{ color: "#6B8F71" }}
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <line x1="2" y1="12" x2="22" y2="12" />
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-display font-medium mb-3">Web Dev</h3>
-                <p className="text-sm leading-relaxed mb-4">
-                  Creating Framer templates — from concept
-                  to polished site. UI/UX design, graphic design, motion, and
-                  performance-optimized builds. SEO-ready and built to convert.
-                  Available for custom projects.
-                </p>
-                <Link
-                  href="/web-dev"
-                  className="text-sm font-mono transition-colors mt-auto self-end"
-                  style={{ color: "#6B8F71" }}
-                >
-                  Explore →
-                </Link>
-              </div>
-
-              {/* Card 3: Game Dev */}
-              <div
-                className="flex flex-col h-full rounded-lg p-6 transition-all duration-200 hover:shadow-md"
-                style={{
-                  border: "1px solid #6B8F71",
-                }}
-              >
-                <div className="mb-4">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    style={{ color: "#6B8F71" }}
-                  >
-                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                    <line x1="2" y1="17" x2="22" y2="17" />
-                    <line x1="6" y1="21" x2="18" y2="21" />
-                    <circle cx="9" cy="9" r="1" />
-                    <circle cx="15" cy="9" r="1" />
-                    <circle cx="9" cy="13" r="1" />
-                    <circle cx="15" cy="13" r="1" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-display font-medium mb-3">Game Dev</h3>
-                <p className="text-sm leading-relaxed mb-4">
-                  Creating game experiences in Fortnite — from concept
-                  to published map. World design, game mechanics, scripting, and
-                  performance-optimized builds. Platform-ready and built to
-                  engage. Available for custom projects.
-                </p>
-                <Link
-                  href="/game-dev"
-                  className="text-sm font-mono transition-colors mt-auto self-end"
-                  style={{ color: "#6B8F71" }}
-                >
-                  Explore →
-                </Link>
-              </div>
-            </div>
+                <span style={{ color: "var(--accent)", marginBottom: 16 }}>{icon}</span>
+                <span style={{ fontFamily: "var(--font-outfit)", fontWeight: 600, fontSize: 18, color: "var(--text)", marginBottom: 10 }}>{label}</span>
+                <span style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 14, lineHeight: 1.6, color: "var(--muted)", flex: 1, marginBottom: 20 }}>{desc}</span>
+                <span style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 14, color: "var(--accent)", marginTop: "auto" }}>Explore →</span>
+              </Link>
+            ))}
           </div>
         </section>
 
-        {/* Section 5: Logs */}
-        <Logs />
+        {/* Logs */}
+        <section style={{ paddingBottom: 96 }}><Logs /></section>
 
-        {/* Section 6: Blog */}
-        <PostList posts={latestPosts} showLink={true} />
+        {/* Blog Preview */}
+        <section style={{ paddingBottom: 96 }}>
+          <PostList posts={latestPosts} showLink={true} heading="Latest writing" />
+        </section>
+
       </div>
     </>
   );
