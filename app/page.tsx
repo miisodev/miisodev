@@ -81,15 +81,12 @@ export default async function Home() {
             style={{
               display: "block",
               background: "var(--surface)",
-              border: "1px solid var(--border)",
-              borderLeftWidth: 4,
-              borderLeftColor: "var(--brand)",
+              border: "2px solid var(--brand)",
               borderRadius: 12,
               padding: 24,
               textDecoration: "none",
             }}
           >
-            <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 11, color: "var(--brand)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10 }}>SaaS Product</p>
             <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 700, fontSize: 22, color: "var(--text)", marginBottom: 6 }}>myClerkBook</p>
             <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 15, color: "var(--muted)", marginBottom: 8 }}>Smart bookkeeping for modern professionals.</p>
             <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 14, lineHeight: 1.6, color: "var(--muted)", marginBottom: 16, maxWidth: 480 }}>
