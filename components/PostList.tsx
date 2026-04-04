@@ -1,51 +1,63 @@
+"use client";
+
 import Link from "next/link";
-import { Post } from "@/lib/posts";
-import { formatDate } from "@/lib/posts";
+import { Post, formatDate, calculateReadTime } from "@/lib/posts";
 
 interface PostListProps {
   posts: Post[];
   showLink?: boolean;
+  heading?: string;
 }
 
-export default function PostList({ posts, showLink = true }: PostListProps) {
+export default function PostList({ posts, showLink = true, heading = "Latest writing" }: PostListProps) {
   return (
-    <section className="space-y-8 fade-in stagger-item-5">
-      <div>
-        <h2 className="text-3xl font-display mb-2">&lt;/&gt; blog</h2>
-      </div>
+    <section>
+      <h2 style={{ fontFamily: "var(--font-outfit)", fontWeight: 700, fontSize: 32, letterSpacing: "-0.02em", color: "var(--text)", marginBottom: 32 }}>
+        {heading}
+      </h2>
 
-      <div className="space-y-6">
-        {posts.map((post) => (
-          <article
+      <div>
+        {posts.map((post, idx) => (
+          <Link
             key={post.slug}
-            className="pb-6 last:border-b-0"
+            href={`/blog/${post.slug}`}
             style={{
-              borderBottom: "1px solid rgba(102, 102, 102, 0.2)",
+              display: "flex",
+              alignItems: "center",
+              gap: 16,
+              padding: "14px 12px 14px 16px",
+              borderTop: idx === 0 ? "1px solid var(--border)" : "none",
+              borderBottom: "1px solid var(--border)",
+              borderLeft: "2px solid transparent",
+              textDecoration: "none",
+              transition: "background 150ms ease, border-left-color 150ms ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "var(--surface)";
+              e.currentTarget.style.borderLeftColor = "var(--accent)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "transparent";
+              e.currentTarget.style.borderLeftColor = "transparent";
             }}
           >
-            <Link
-              href={`/blog/${post.slug}`}
-              className="group block transition-colors"
-            >
-              <h3 className="text-xl font-display leading-tight">{post.title}</h3>
-            </Link>
-            <p className="text-xs font-mono mt-2" style={{ color: "var(--muted)" }}>
+            <span style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 12, color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.06em", minWidth: 100, flexShrink: 0 }}>
               {formatDate(post.date)}
-            </p>
-            <p className="text-sm mt-2 leading-relaxed" style={{ opacity: 0.9 }}>
-              {post.excerpt}
-            </p>
-          </article>
+            </span>
+            <span style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 15, color: "var(--text)", flex: 1 }}>
+              {post.title}
+            </span>
+            <span style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 12, color: "var(--muted)", flexShrink: 0 }}>
+              {calculateReadTime(post.content)} min read
+            </span>
+            <span style={{ color: "var(--accent)", fontSize: 16, flexShrink: 0 }}>→</span>
+          </Link>
         ))}
       </div>
 
       {showLink && (
-        <div>
-          <Link
-            href="/blog"
-            className="inline-block text-sm font-mono transition-opacity"
-            style={{ color: "#6B8F71" }}
-          >
+        <div style={{ marginTop: 20 }}>
+          <Link href="/blog" style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 14, color: "var(--accent)" }}>
             All posts →
           </Link>
         </div>
