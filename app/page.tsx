@@ -26,10 +26,10 @@ export default async function Home() {
       `}</style>
 
       <ProjectSchema />
-      <div className="animate-page" style={{ maxWidth: 896, margin: "0 auto", padding: "0 24px" }}>
+      <div className="animate-page" style={{ maxWidth: 896, margin: "0 auto", padding: "0 20px" }}>
 
         {/* Hero */}
-        <section style={{ paddingTop: 120, paddingBottom: 96 }}>
+        <section style={{ paddingTop: "clamp(56px, 12vw, 120px)", paddingBottom: "clamp(56px, 10vw, 96px)" }}>
           <h1 className="hero-name" style={{ fontFamily: "var(--font-outfit)", fontWeight: 700, fontSize: "clamp(32px, 4.5vw, 42px)", letterSpacing: "-0.01em", lineHeight: 1.2, color: "var(--text)", marginBottom: 16 }}>
             Kevin Miiso Novo
           </h1>
@@ -42,7 +42,7 @@ export default async function Home() {
             I build AI-powered SaaS products, craft web templates in Framer, and create game experiences in Fortnite. Currently leading myClerkBook, a privacy-first financial management platform, while pushing what&apos;s possible with modern AI, agentic development, and cross-platform engineering. Based in Durban, South Africa. Always building, always shipping.
           </p>
 
-          <div className="hero-socials" style={{ display: "flex", flexWrap: "wrap", gap: 0, alignItems: "center" }}>
+          <div className="hero-socials" style={{ display: "flex", flexWrap: "wrap", gap: "8px 0", alignItems: "center" }}>
             {[
               { href: "https://x.com/miisodev", label: "@miisodev" },
               { href: "https://twitch.tv/miisodev", label: "twitch" },
@@ -61,7 +61,7 @@ export default async function Home() {
                 >
                   {label}
                 </a>
-                {i < arr.length - 1 && <span style={{ color: "var(--muted)", margin: "0 16px" }}>·</span>}
+                {i < arr.length - 1 && <span style={{ color: "var(--muted)", margin: "0 12px" }}>·</span>}
               </span>
             ))}
           </div>
