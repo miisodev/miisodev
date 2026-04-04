@@ -22,9 +22,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kevin Miiso Novo — Founder & CEO | Product Developer | Full-Stack Engineer",
+  title: "Kevin Miiso Novo — Founder, Builder & Engineer",
   description:
-    "Founder, CEO, product developer, and full-stack engineer based in Durban, South Africa. Building myClerkBook and projects in SaaS, web dev, and game dev.",
+    "Building AI-powered SaaS, Framer web templates, and Fortnite game experiences. Leading myClerkBook — a privacy-first bookkeeping platform. Durban, South Africa.",
   keywords: [
     "miiso.dev", "miisodev", "miiso", "Kevin Miiso Novo", "SaaS", "Founder",
     "CEO", "Product Developer", "Full-Stack Engineer", "AI", "myClerkBook",
@@ -34,8 +34,9 @@ export const metadata: Metadata = {
   creator: "Kevin Miiso Novo",
   icons: { icon: "/favicon.svg", apple: "/favicon.svg" },
   openGraph: {
-    title: "Kevin Miiso Novo — Founder, CEO, Product Developer & Full-Stack Engineer",
-    description: "Founder, CEO, product developer, and full-stack engineer based in Durban, South Africa. Building myClerkBook and projects in SaaS, web dev, and game dev.",
+    title: "Kevin Miiso Novo — Founder, Builder & Engineer",
+    description:
+      "Building AI-powered SaaS, Framer web templates, and Fortnite game experiences. Leading myClerkBook — a privacy-first bookkeeping platform. Durban, South Africa.",
     url: "https://miiso.dev",
     type: "website",
     siteName: "Kevin Miiso Novo",
@@ -44,8 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kevin Miiso Novo — Founder, CEO, Product Developer & Full-Stack Engineer",
-    description: "Founder, CEO, product developer, and full-stack engineer based in Durban, South Africa.",
+    title: "Kevin Miiso Novo — Founder, Builder & Engineer",
+    description:
+      "Building AI-powered SaaS, Framer web templates, and Fortnite game experiences. Leading myClerkBook — a privacy-first bookkeeping platform. Durban, South Africa.",
     creator: "@miisodev",
     images: ["https://miiso.dev/og-image.png"],
   },

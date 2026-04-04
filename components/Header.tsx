@@ -67,10 +67,13 @@ export default function Header() {
                 fontWeight: 500,
                 fontSize: 14,
                 color: isActive(href) ? "var(--accent)" : "var(--muted)",
+                opacity: isActive(href) ? 1 : 0.9,
                 position: "relative",
                 paddingBottom: 2,
                 transition: "color 150ms ease",
               }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = "var(--accent)"; e.currentTarget.style.opacity = "0.9"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = isActive(href) ? "var(--accent)" : ""; e.currentTarget.style.opacity = isActive(href) ? "1" : "0.9"; }}
             >
               {label}
               {isActive(href) && (

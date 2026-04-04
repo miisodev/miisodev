@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/SchemaScripts";
 
 export const metadata: Metadata = {
-  title: "Web Dev — Kevin Miiso Novo | Framer Templates & Custom Sites",
-  description: "Framer templates and custom web development by Kevin Miiso Novo. UI/UX design, motion, and performance-optimized builds. SEO-ready and built to convert.",
-  keywords: ["web development", "Framer templates", "Kevin Miiso Novo", "miisodev", "UI/UX", "web design"],
+  title: "Framer Templates & Web Dev — Kevin Miiso Novo",
+  description:
+    "Framer templates and custom web projects by Kevin Miiso Novo. UI/UX design, motion, and performance-optimized builds — SEO-ready and built to convert.",
+  keywords: ["web development", "Framer templates", "Kevin Miiso Novo", "miisodev", "UI/UX", "web design", "custom Framer site", "Framer designer"],
   authors: [{ name: "Kevin Miiso Novo" }],
   openGraph: {
-    title: "Web Dev — Kevin Miiso Novo | Framer Templates & Custom Sites",
-    description: "Framer templates and custom web development by Kevin Miiso Novo.",
+    title: "Framer Templates & Web Dev — Kevin Miiso Novo",
+    description:
+      "Framer templates and custom web projects by Kevin Miiso Novo. UI/UX, motion, and performance-optimized builds — SEO-ready and built to convert.",
     url: "https://miiso.dev/web-dev",
     type: "website",
     siteName: "Kevin Miiso Novo",
@@ -16,8 +18,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Dev — Kevin Miiso Novo",
-    description: "Framer templates and custom web development by Kevin Miiso Novo.",
+    title: "Framer Templates & Web Dev — Kevin Miiso Novo",
+    description:
+      "Framer templates and custom web projects by Kevin Miiso Novo. UI/UX, motion, and performance-optimized builds — SEO-ready and built to convert.",
     creator: "@miisodev",
     images: ["https://miiso.dev/og-image.png"],
   },
@@ -32,9 +35,9 @@ export default function WebDevPage() {
 
         <section style={{ paddingTop: 96, paddingBottom: 64 }}>
           <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 12, color: "var(--accent)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>Web Dev</p>
-          <h1 style={{ fontFamily: "var(--font-outfit)", fontWeight: 800, fontSize: "clamp(40px, 6vw, 56px)", letterSpacing: "-0.03em", lineHeight: 1.1, color: "var(--text)", marginBottom: 16 }}>Crafted for the web.</h1>
-          <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 300, fontSize: 18, color: "var(--muted)", marginBottom: 16 }}>Framer templates built to convert.</p>
-          <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 15, lineHeight: 1.65, color: "var(--muted)", maxWidth: 480 }}>UI/UX design, graphic design, motion, and performance-optimized builds. SEO-ready and built to convert. Available for custom projects.</p>
+          <h1 style={{ fontFamily: "var(--font-outfit)", fontWeight: 800, fontSize: "clamp(40px, 6vw, 56px)", letterSpacing: "-0.03em", lineHeight: 1.1, color: "var(--text)", marginBottom: 16 }}>Web Dev.</h1>
+          <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 300, fontSize: 18, color: "var(--muted)", marginBottom: 16 }}>Building Framer projects - from concept to polished site.</p>
+          <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 15, lineHeight: 1.65, color: "var(--muted)", maxWidth: 480 }}>I design and build Framer projects. UI/UX design, graphic design, motion, and performance-optimized builds. SEO-ready and built to convert. Available for custom projects.</p>
         </section>
 
         <section style={{ paddingBottom: 64 }}>

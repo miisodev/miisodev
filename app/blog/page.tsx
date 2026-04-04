@@ -3,11 +3,12 @@ import PostList from "@/components/PostList";
 import { BreadcrumbSchema } from "@/components/SchemaScripts";
 
 export const metadata = {
-  title: "Blog — Kevin Miiso Novo",
-  description: "Writing on AI, full-stack engineering, SaaS development, and building in public. Thoughts from Kevin Miiso Novo, Founder and CEO of myClerkBook.",
+  title: "Blog — Kevin Miiso Novo | Building in Public",
+  description:
+    "Writing on AI, full-stack engineering, SaaS development, and building in public — by Kevin Miiso Novo, indie founder and CEO of myClerkBook.",
   keywords: ["AI SaaS", "Miiso", "miisodev", "Kevin Miiso Novo", "Founder blog", "CEO blog", "Product development", "SaaS development", "web development", "game development", "Building in public"],
-  openGraph: { title: "Blog — Kevin Miiso Novo", description: "Writing on AI, full-stack engineering, and building products as a solo founder.", url: "https://miiso.dev/blog", type: "website" },
-  twitter: { card: "summary_large_image", title: "Blog — Kevin Miiso Novo", description: "Writing on AI, full-stack engineering, and building products as a solo founder.", creator: "@miisodev", images: ["https://miiso.dev/og-image.png"] },
+  openGraph: { title: "Blog — Kevin Miiso Novo | Building in Public", description: "Writing on AI, full-stack engineering, SaaS development, and building in public by Kevin Miiso Novo, indie founder and CEO of myClerkBook.", url: "https://miiso.dev/blog", type: "website" },
+  twitter: { card: "summary_large_image", title: "Blog — Kevin Miiso Novo | Building in Public", description: "Writing on AI, full-stack engineering, SaaS development, and building in public by Kevin Miiso Novo, indie founder and CEO of myClerkBook.", creator: "@miisodev", images: ["https://miiso.dev/og-image.png"] },
   alternates: { canonical: "https://miiso.dev/blog" },
 };
 

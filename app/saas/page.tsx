@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/SchemaScripts";
 
 export const metadata: Metadata = {
-  title: "SaaS — Kevin Miiso Novo | AI-Powered Software Products",
-  description: "AI-powered SaaS products built and designed for acquisition by Kevin Miiso Novo. Modern full-stack engineering with clean architecture and scalable infrastructure.",
+  title: "AI SaaS Products by Kevin Miiso Novo | Built to Ship",
+  description:
+    "AI-powered SaaS products built to ship and designed for acquisition. Clean architecture, maintainable code, and scalable infrastructure by Kevin Miiso Novo.",
   keywords: ["SaaS", "AI SaaS", "software products", "Kevin Miiso Novo", "miisodev", "indie SaaS", "software acquisition", "full-stack engineering", "Next.js SaaS"],
   authors: [{ name: "Kevin Miiso Novo" }],
   openGraph: {
-    title: "SaaS — Kevin Miiso Novo | AI-Powered Software Products",
-    description: "AI-powered SaaS products built and designed for acquisition by Kevin Miiso Novo.",
+    title: "AI SaaS Products by Kevin Miiso Novo | Built to Ship",
+    description:
+      "AI-powered SaaS products built to ship and designed for acquisition. Clean architecture and scalable infrastructure by Kevin Miiso Novo.",
     url: "https://miiso.dev/saas",
     type: "website",
     siteName: "Kevin Miiso Novo",
@@ -16,8 +18,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SaaS — Kevin Miiso Novo | AI-Powered Software Products",
-    description: "AI-powered SaaS products built and designed for acquisition by Kevin Miiso Novo.",
+    title: "AI SaaS Products by Kevin Miiso Novo | Built to Ship",
+    description:
+      "AI-powered SaaS products built to ship and designed for acquisition. Clean architecture and scalable infrastructure by Kevin Miiso Novo.",
     creator: "@miisodev",
     images: ["https://miiso.dev/og-image.png"],
   },
@@ -32,8 +35,8 @@ export default function SaaSPage() {
 
         <section style={{ paddingTop: 96, paddingBottom: 64 }}>
           <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 12, color: "var(--accent)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>SaaS</p>
-          <h1 style={{ fontFamily: "var(--font-outfit)", fontWeight: 800, fontSize: "clamp(40px, 6vw, 56px)", letterSpacing: "-0.03em", lineHeight: 1.1, color: "var(--text)", marginBottom: 16 }}>Building to ship.</h1>
-          <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 300, fontSize: 18, color: "var(--muted)", marginBottom: 16 }}>AI-powered software products designed to be acquired.</p>
+          <h1 style={{ fontFamily: "var(--font-outfit)", fontWeight: 800, fontSize: "clamp(40px, 6vw, 56px)", letterSpacing: "-0.03em", lineHeight: 1.1, color: "var(--text)", marginBottom: 16 }}>SaaS.</h1>
+          <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 300, fontSize: 18, color: "var(--muted)", marginBottom: 16 }}>Building AI-powered software products designed to be acquired.</p>
           <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 15, lineHeight: 1.65, color: "var(--muted)", maxWidth: 480 }}>
             I build standalone software projects, ship them, and make them available for acquisition. Modern full-stack engineering with clean architecture, maintainable codebases, and scalable infrastructure built to grow.
           </p>

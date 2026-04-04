@@ -10,11 +10,13 @@ export default async function Home() {
   return (
     <>
       <style>{`
-        .social-link { color: var(--muted); transition: color 150ms ease; }
-        .social-link:hover { color: var(--accent); }
+        .social-link { color: var(--accent); transition: opacity 150ms ease; }
+        .social-link:hover { opacity: 0.75; }
 
-        .clerk-card { transition: transform 200ms ease, box-shadow 200ms ease; }
+        .clerk-card { background: #ffffff; transition: transform 200ms ease, box-shadow 200ms ease; }
         .clerk-card:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.04); }
+        html[data-theme="dark"] .clerk-card { background: var(--surface); }
+        @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .clerk-card { background: var(--surface); } }
 
         .capability-card { transition: border-color 150ms ease, background 150ms ease; }
         .capability-card:hover { border-color: var(--accent) !important; background: rgba(249,92,75,0.02) !important; }
@@ -28,44 +30,38 @@ export default async function Home() {
 
         {/* Hero */}
         <section style={{ paddingTop: 120, paddingBottom: 96 }}>
-          <h1 className="sr-only">Kevin Miiso Novo — Founder & CEO | Product Developer | Full-Stack Engineer</h1>
-
-          <p className="hero-label" style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 12, color: "var(--accent)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>
-            Founder &amp; CEO · Durban, South Africa
-          </p>
-
-          <p className="hero-name" style={{ fontFamily: "var(--font-outfit)", fontWeight: 800, fontSize: "clamp(48px, 7vw, 72px)", letterSpacing: "-0.03em", lineHeight: 1.1, color: "var(--text)", marginBottom: 20 }}>
+          <h1 className="hero-name" style={{ fontFamily: "var(--font-outfit)", fontWeight: 700, fontSize: "clamp(32px, 4.5vw, 42px)", letterSpacing: "-0.01em", lineHeight: 1.2, color: "var(--text)", marginBottom: 16 }}>
             Kevin Miiso Novo
+          </h1>
+
+          <p className="hero-tagline" style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 18, color: "var(--text)", marginBottom: 12 }}>
+            Wassup you can call me Miiso, I like learning, innovating and exploration
           </p>
 
-          <p className="hero-tagline" style={{ fontFamily: "var(--font-outfit)", fontWeight: 300, fontSize: 20, color: "var(--muted)", marginBottom: 16 }}>
-            Building AI-powered products that ship.
+          <p className="hero-bio" style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 16, lineHeight: 1.7, color: "var(--text)", maxWidth: 806, marginBottom: 24 }}>
+            I build AI-powered SaaS products, craft web templates in Framer, and create game experiences in Fortnite. Currently leading myClerkBook, a privacy-first financial management platform, while pushing what&apos;s possible with modern AI, agentic development, and cross-platform engineering. Based in Durban, South Africa. Always building, always shipping.
           </p>
 
-          <p className="hero-bio" style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 15, lineHeight: 1.65, color: "var(--muted)", maxWidth: 480, marginBottom: 24 }}>
-            I build AI-powered SaaS products, craft web templates in Framer, and create game experiences in Fortnite. Currently leading myClerkBook — a privacy-first financial management platform. Based in Durban, South Africa.
-          </p>
-
-          <div className="hero-socials" style={{ display: "flex", flexWrap: "wrap", gap: 4, alignItems: "center" }}>
+          <div className="hero-socials" style={{ display: "flex", flexWrap: "wrap", gap: 0, alignItems: "center" }}>
             {[
-              { href: "https://x.com/miisodev", label: "x.com" },
+              { href: "https://x.com/miisodev", label: "@miisodev" },
               { href: "https://twitch.tv/miisodev", label: "twitch" },
               { href: "https://youtube.com/@miisodev", label: "youtube" },
               { href: "https://tiktok.com/@miisodev", label: "tiktok" },
               { href: "https://github.com/miisodev", label: "github" },
               { href: "mailto:miisodev@gmail.com", label: "miisodev@gmail.com" },
             ].map(({ href, label }, i, arr) => (
-              <span key={href} style={{ display: "flex", alignItems: "center", gap: 4 }}>
+              <span key={href} style={{ display: "flex", alignItems: "center" }}>
                 <a
                   href={href}
                   target={href.startsWith("mailto") ? undefined : "_blank"}
                   rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
                   className="social-link"
-                  style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 14 }}
+                  style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 15 }}
                 >
                   {label}
                 </a>
-                {i < arr.length - 1 && <span style={{ color: "var(--muted)", opacity: 0.4 }}>·</span>}
+                {i < arr.length - 1 && <span style={{ color: "var(--muted)", margin: "0 16px" }}>·</span>}
               </span>
             ))}
           </div>
@@ -80,7 +76,6 @@ export default async function Home() {
             className="clerk-card"
             style={{
               display: "block",
-              background: "var(--surface)",
               border: "2px solid var(--brand)",
               borderRadius: 12,
               padding: 24,
@@ -88,7 +83,7 @@ export default async function Home() {
             }}
           >
             <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 700, fontSize: 22, color: "var(--text)", marginBottom: 6 }}>myClerkBook</p>
-            <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 15, color: "var(--muted)", marginBottom: 8 }}>Smart bookkeeping for modern professionals.</p>
+            <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 15, color: "var(--text)", marginBottom: 8 }}>Smart bookkeeping for modern professionals.</p>
             <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 14, lineHeight: 1.6, color: "var(--muted)", marginBottom: 16, maxWidth: 480 }}>
               Take control of your finances without compromising your privacy. AI-powered expense and income tracking — no bank linking required.
             </p>

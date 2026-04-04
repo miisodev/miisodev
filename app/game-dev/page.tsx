@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/SchemaScripts";
 
 export const metadata: Metadata = {
-  title: "Game Dev — Kevin Miiso Novo | Fortnite Game Experiences",
-  description: "Fortnite game experiences by Kevin Miiso Novo. World design, mechanics, scripting, and performance-optimized builds. Available for custom projects.",
-  keywords: ["game development", "Fortnite", "UEFN", "Kevin Miiso Novo", "miisodev", "game design"],
+  title: "Fortnite Game Dev — Kevin Miiso Novo | Custom Maps",
+  description:
+    "Fortnite game experiences by Kevin Miiso Novo — from concept to published map. World design, mechanics, scripting, and performance-optimized builds. Custom projects welcome.",
+  keywords: ["game development", "Fortnite", "UEFN", "Kevin Miiso Novo", "miisodev", "game design", "Fortnite creative maps", "custom Fortnite map"],
   authors: [{ name: "Kevin Miiso Novo" }],
   openGraph: {
-    title: "Game Dev — Kevin Miiso Novo | Fortnite Game Experiences",
-    description: "Fortnite game experiences by Kevin Miiso Novo.",
+    title: "Fortnite Game Dev — Kevin Miiso Novo | Custom Maps",
+    description:
+      "Fortnite game experiences by Kevin Miiso Novo — concept to published map. World design, mechanics, scripting, and optimized builds. Custom projects welcome.",
     url: "https://miiso.dev/game-dev",
     type: "website",
     siteName: "Kevin Miiso Novo",
@@ -16,8 +18,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Game Dev — Kevin Miiso Novo",
-    description: "Fortnite game experiences by Kevin Miiso Novo.",
+    title: "Fortnite Game Dev — Kevin Miiso Novo | Custom Maps",
+    description:
+      "Fortnite game experiences by Kevin Miiso Novo — concept to published map. World design, mechanics, scripting, and optimized builds. Custom projects welcome.",
     creator: "@miisodev",
     images: ["https://miiso.dev/og-image.png"],
   },
@@ -32,9 +35,9 @@ export default function GameDevPage() {
 
         <section style={{ paddingTop: 96, paddingBottom: 64 }}>
           <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 12, color: "var(--accent)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>Game Dev</p>
-          <h1 style={{ fontFamily: "var(--font-outfit)", fontWeight: 800, fontSize: "clamp(40px, 6vw, 56px)", letterSpacing: "-0.03em", lineHeight: 1.1, color: "var(--text)", marginBottom: 16 }}>Built for Fortnite.</h1>
-          <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 300, fontSize: 18, color: "var(--muted)", marginBottom: 16 }}>Game experiences built to engage.</p>
-          <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 15, lineHeight: 1.65, color: "var(--muted)", maxWidth: 480 }}>Creating game experiences in Fortnite from concept to published map. World design, game mechanics, scripting, and performance-optimized builds. Available for custom projects.</p>
+          <h1 style={{ fontFamily: "var(--font-outfit)", fontWeight: 800, fontSize: "clamp(40px, 6vw, 56px)", letterSpacing: "-0.03em", lineHeight: 1.1, color: "var(--text)", marginBottom: 16 }}>Game Dev.</h1>
+          <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 300, fontSize: 18, color: "var(--muted)", marginBottom: 16 }}>Building game experiences in Fortnite - from concept to published game.</p>
+          <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 15, lineHeight: 1.65, color: "var(--muted)", maxWidth: 480 }}>I design and build game experiences in Fortnite. World design, game mechanics, scripting, and performance-optimized builds. Platform-ready and built to engage. Available for custom projects.</p>
         </section>
 
         <section style={{ paddingBottom: 64 }}>
