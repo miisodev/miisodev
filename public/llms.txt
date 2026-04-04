@@ -29,9 +29,14 @@ required, and multiple dashboards.
 /game-dev — Fortnite game experiences and custom game projects.
 /blog — Writing on AI, full-stack engineering, SaaS, and building in public.
 
+## Blog Posts
+
+/blog/why-im-building-myclerkbook — Why myClerkBook exists: the privacy gap in
+financial tools, who it's built for, and what the MVP looks like.
+
 ## Skills & Technologies
 
-TypeScript, Next.js, React, Node.js, PostgreSQL, Supabase, Kotlin, React Native,
+TypeScript, Next.js, React, Node.js, PostgreSQL, Supabase, Bun, Kotlin, React Native,
 Electron, Tauri, Claude API, OpenAI API, Gemini API, Figma, Framer, Fortnite UEFN.
 
 ## Social Profiles
