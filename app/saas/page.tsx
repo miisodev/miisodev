@@ -27,6 +27,10 @@ export const metadata: Metadata = {
 export default function SaaSPage() {
   return (
     <>
+      <style>{`
+        .clerk-card-saas { transition: transform 200ms ease, box-shadow 200ms ease; }
+        .clerk-card-saas:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+      `}</style>
       <BreadcrumbSchema items={[{ name: "Home", url: "https://miiso.dev" }, { name: "SaaS", url: "https://miiso.dev/saas" }]} />
       <div className="animate-page" style={{ maxWidth: 896, margin: "0 auto", padding: "0 24px" }}>
 
@@ -47,9 +51,8 @@ export default function SaaSPage() {
             href="https://myclerkbook.com"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ display: "block", background: "var(--surface)", border: "1px solid var(--border)", borderLeftWidth: 4, borderLeftColor: "var(--brand)", borderRadius: 12, padding: 24, marginBottom: 16, textDecoration: "none", transition: "transform 200ms ease, box-shadow 200ms ease" }}
-            onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.08)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = ""; }}
+            className="clerk-card-saas"
+            style={{ display: "block", background: "var(--surface)", border: "1px solid var(--border)", borderLeftWidth: 4, borderLeftColor: "var(--brand)", borderRadius: 12, padding: 24, marginBottom: 16, textDecoration: "none" }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
               <span style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 11, color: "var(--brand)", textTransform: "uppercase", letterSpacing: "0.08em" }}>SaaS Product</span>

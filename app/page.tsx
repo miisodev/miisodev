@@ -9,6 +9,20 @@ export default async function Home() {
 
   return (
     <>
+      <style>{`
+        .social-link { color: var(--muted); transition: color 150ms ease; }
+        .social-link:hover { color: var(--accent); }
+
+        .clerk-card { transition: transform 200ms ease, box-shadow 200ms ease; }
+        .clerk-card:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.04); }
+
+        .capability-card { transition: border-color 150ms ease, background 150ms ease; }
+        .capability-card:hover { border-color: var(--accent) !important; background: rgba(249,92,75,0.02) !important; }
+
+        .venture-card { transition: border-color 150ms ease, transform 200ms ease; }
+        .venture-card:hover { border-color: var(--accent) !important; transform: translateY(-2px); }
+      `}</style>
+
       <ProjectSchema />
       <div className="animate-page" style={{ maxWidth: 896, margin: "0 auto", padding: "0 24px" }}>
 
@@ -46,9 +60,8 @@ export default async function Home() {
                   href={href}
                   target={href.startsWith("mailto") ? undefined : "_blank"}
                   rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
-                  style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 14, color: "var(--muted)", transition: "color 150ms ease" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "")}
+                  className="social-link"
+                  style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 14 }}
                 >
                   {label}
                 </a>
@@ -64,6 +77,7 @@ export default async function Home() {
             href="https://myclerkbook.com"
             target="_blank"
             rel="noopener noreferrer"
+            className="clerk-card"
             style={{
               display: "block",
               background: "var(--surface)",
@@ -73,15 +87,6 @@ export default async function Home() {
               borderRadius: 12,
               padding: 24,
               textDecoration: "none",
-              transition: "transform 200ms ease, box-shadow 200ms ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-1px)";
-              e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.04)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "";
-              e.currentTarget.style.boxShadow = "";
             }}
           >
             <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 11, color: "var(--brand)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10 }}>SaaS Product</p>
@@ -108,15 +113,8 @@ export default async function Home() {
             ].map(({ label, desc }) => (
               <div
                 key={label}
-                style={{ background: "var(--bg)", border: "1px solid var(--border)", borderRadius: 12, padding: 24, transition: "border-color 150ms ease, background 150ms ease" }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.borderColor = "var(--accent)";
-                  (e.currentTarget as HTMLDivElement).style.background = "rgba(249,92,75,0.02)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.borderColor = "";
-                  (e.currentTarget as HTMLDivElement).style.background = "";
-                }}
+                className="capability-card"
+                style={{ background: "var(--bg)", border: "1px solid var(--border)", borderRadius: 12, padding: 24 }}
               >
                 <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 11, color: "var(--accent)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10 }}>{label}</p>
                 <p style={{ fontFamily: "var(--font-outfit)", fontWeight: 400, fontSize: 14, lineHeight: 1.6, color: "var(--text)", opacity: 0.8 }}>{desc}</p>
@@ -149,9 +147,8 @@ export default async function Home() {
               <Link
                 key={href}
                 href={href}
-                style={{ display: "flex", flexDirection: "column", background: "var(--bg)", border: "1px solid var(--border)", borderRadius: 12, padding: 24, textDecoration: "none", transition: "border-color 150ms ease, transform 200ms ease" }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--accent)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; e.currentTarget.style.transform = ""; }}
+                className="venture-card"
+                style={{ display: "flex", flexDirection: "column", background: "var(--bg)", border: "1px solid var(--border)", borderRadius: 12, padding: 24, textDecoration: "none" }}
               >
                 <span style={{ color: "var(--accent)", marginBottom: 16 }}>{icon}</span>
                 <span style={{ fontFamily: "var(--font-outfit)", fontWeight: 600, fontSize: 18, color: "var(--text)", marginBottom: 10 }}>{label}</span>

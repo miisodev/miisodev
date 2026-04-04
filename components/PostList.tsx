@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { Post, formatDate, calculateReadTime } from "@/lib/posts";
 
@@ -12,6 +10,22 @@ interface PostListProps {
 export default function PostList({ posts, showLink = true, heading = "Latest writing" }: PostListProps) {
   return (
     <section>
+      <style>{`
+        .post-row {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          padding: 14px 12px 14px 16px;
+          border-left: 2px solid transparent;
+          text-decoration: none;
+          transition: background 150ms ease, border-left-color 150ms ease;
+        }
+        .post-row:hover {
+          background: var(--surface);
+          border-left-color: var(--accent);
+        }
+      `}</style>
+
       <h2 style={{ fontFamily: "var(--font-outfit)", fontWeight: 700, fontSize: 32, letterSpacing: "-0.02em", color: "var(--text)", marginBottom: 32 }}>
         {heading}
       </h2>
@@ -21,24 +35,10 @@ export default function PostList({ posts, showLink = true, heading = "Latest wri
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
+            className="post-row"
             style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 16,
-              padding: "14px 12px 14px 16px",
               borderTop: idx === 0 ? "1px solid var(--border)" : "none",
               borderBottom: "1px solid var(--border)",
-              borderLeft: "2px solid transparent",
-              textDecoration: "none",
-              transition: "background 150ms ease, border-left-color 150ms ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "var(--surface)";
-              e.currentTarget.style.borderLeftColor = "var(--accent)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "transparent";
-              e.currentTarget.style.borderLeftColor = "transparent";
             }}
           >
             <span style={{ fontFamily: "var(--font-outfit)", fontWeight: 500, fontSize: 12, color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.06em", minWidth: 100, flexShrink: 0 }}>
