@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/SchemaScripts";
+import ReviewsCarousel from '@/components/ReviewsCarousel'
 
 export const metadata: Metadata = {
   title: "AI SaaS Products by Kevin Miiso Novo | Built to Ship",
@@ -56,6 +57,11 @@ export default function SaaSPage() {
               ))}
             </div>
           </div>
+        </section>
+
+        <section style={{ paddingBottom: 96 }}>
+          <h2 style={{ fontFamily: "var(--font-outfit)", fontWeight: 700, fontSize: 28, letterSpacing: "-0.02em", color: "var(--text)", marginBottom: 24 }}>Reviews</h2>
+          <ReviewsCarousel reviews={[]} emptyMessage="No reviews yet — first product ships soon." />
         </section>
       </div>
     </>

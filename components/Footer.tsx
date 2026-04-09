@@ -83,14 +83,6 @@ export default function Footer() {
           ))}
         </div>
 
-        <a
-          href="mailto:miisodev@gmail.com"
-          style={{ fontFamily: "var(--font-outfit)", fontSize: 13, fontWeight: 500, color: "var(--muted)", letterSpacing: "0.03em", transition: "color 150ms ease" }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "")}
-        >
-          miisodev@gmail.com
-        </a>
       </div>
     </footer>
   );
