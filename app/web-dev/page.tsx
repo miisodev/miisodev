@@ -67,8 +67,8 @@ export default function WebDevPage() {
               description="Minimal gallery-style portfolio for a South African contemporary oil painter. Artwork-first layout with mailing list integration."
               badges={['Next.js', 'Tailwind', 'Loops.so', 'Truehost']}
               stats={[
-                { label: 'Avg. monthly visits', value: '700' },
-                { label: 'Subscribers', value: '2K' },
+                { label: 'Visits', value: '2K' },
+                { label: 'Subscribers', value: '500' },
                 { label: 'Status', value: 'Live', highlight: true },
               ]}
               linkLabel="View site →"
